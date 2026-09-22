@@ -1,0 +1,22 @@
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+
+export default function Layout() {
+  return (
+    <>
+      <StatusBar style="light" />
+      <Stack screenOptions={{
+        headerStyle: { backgroundColor: "#090B0A" },
+        headerTintColor: "#F5F7F6",
+        contentStyle: { backgroundColor: "#090B0A" },
+        headerShadowVisible: false
+      }}>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="onboarding" options={{ title: "Set Your Goal" }} />
+        <Stack.Screen name="home" options={{ title: "IRON IQ", headerBackVisible: false }} />
+        <Stack.Screen name="workout" options={{ title: "Live Workout" }} />
+        <Stack.Screen name="progress" options={{ title: "Progress" }} />
+      </Stack>
+    </>
+  );
+}
