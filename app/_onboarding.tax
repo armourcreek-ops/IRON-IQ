@@ -1,0 +1,73 @@
+import { useState } from "react";
+import { View, Text, Pressable } from "react-native";
+import { router } from "expo-router";
+import { Button, Card, C, styles } from "../src/components/ui";
+
+const goals = [
+  "Build Muscle",
+  "Build Strength",
+  "Get Fit / Lose Weight",
+];
+
+export default function Onboarding() {
+  const [goal, setGoal] = useState("Build Muscle");
+
+  return (
+    <View style={styles.screen}>
+      <Text style={styles.eyebrow}>STEP 1 OF 4</Text>
+
+      <Text style={[styles.h1, { marginTop: 8 }]}>
+        What are we building?
+      </Text>
+
+      <Text
+        style={[
+          styles.body,
+          {
+            marginTop: 8,
+            marginBottom: 22,
+          },
+        ]}
+      >
+        IRON IQ uses your primary goal to personalize your training
+        program and progression.
+      </Text>
+
+      {goals.map((g) => (
+        <Pressable key={g} onPress={() => setGoal(g)}>
+          <Card
+            style={{
+              marginBottom: 12,
+              borderColor: goal === g ? C.green : "#222824",
+            }}
+          >
+            <Text
+              style={{
+                color: goal === g ? C.green : C.text,
+                fontWeight: "900",
+                fontSize: 18,
+              }}
+            >
+              {g}
+            </Text>
+
+            <Text style={[styles.body, { marginTop: 4 }]}>
+              {g === "Build Muscle"
+                ? "Hypertrophy, volume and progressive overload"
+                : g === "Build Strength"
+                ? "Heavy compounds, intensity and performance"
+                : "Resistance training, conditioning and consistency"}
+            </Text>
+          </Card>
+        </Pressable>
+      ))}
+
+      <View style={{ marginTop: "auto" }}>
+        <Button
+          title="CONTINUE"
+          onPress={() => router.replace("/home")}
+        />
+      </View>
+    </View>
+  );
+}
