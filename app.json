@@ -6,7 +6,19 @@
     "version": "0.1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
-    "plugins": ["expo-router"],
-    "experiments": { "typedRoutes": true }
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ironiq.app",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.ironiq.app"
+    }
   }
 }
