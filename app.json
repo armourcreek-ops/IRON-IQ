@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "IRON IQ",
+    "slug": "iron-iq",
+    "scheme": "ironiq",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true }
+  }
+}
